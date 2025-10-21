@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PasswordCard from "./Components/PasswordCard.jsx";
 import RegisterCard from "./Components/RegisterCard.jsx";
 import LoginCard from "./Components/LoginCard.jsx";
-import Main from "./Components/Main.jsx"; 
+import Main from "./Components/Main.jsx";
 
 export default function App() {
   return (

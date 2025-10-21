@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function RegisterCard() {
   const navigate = useNavigate();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -30,7 +30,7 @@ export default function RegisterCard() {
       })
       .then((data) => {
         console.log("✅ Success:", data);
-        navigate("/login")
+        navigate("/login");
       })
       .catch((error) => {
         console.error("❌ Error:", error);
@@ -44,7 +44,9 @@ export default function RegisterCard() {
 
         <form className="vstack gap-3" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="username" className="form-label">Name</label>
+            <label htmlFor="username" className="form-label">
+              Name
+            </label>
             <input
               type="text"
               id="username"
@@ -56,7 +58,9 @@ export default function RegisterCard() {
           </div>
 
           <div>
-            <label htmlFor="email" className="form-label">Email address</label>
+            <label htmlFor="email" className="form-label">
+              Email address
+            </label>
             <input
               type="email"
               id="email"
@@ -68,7 +72,9 @@ export default function RegisterCard() {
           </div>
 
           <div>
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
             <input
               type="password"
               id="password"

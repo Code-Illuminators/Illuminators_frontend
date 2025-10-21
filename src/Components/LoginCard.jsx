@@ -30,7 +30,9 @@ export default function LoginCard() {
 
         <form className="vstack gap-3" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="username" className="form-label">Username</label>
+            <label htmlFor="username" className="form-label">
+              Username
+            </label>
             <input
               id="username"
               name="username"
@@ -41,7 +43,9 @@ export default function LoginCard() {
           </div>
 
           <div>
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
             <input
               type="password"
               id="password"
@@ -54,11 +58,20 @@ export default function LoginCard() {
           </div>
 
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="remember" name="remember" />
-            <label className="form-check-label" htmlFor="remember">Remember me</label>
+            <input
+              className="form-check-input"
+              type="checkbox"
+              id="remember"
+              name="remember"
+            />
+            <label className="form-check-label" htmlFor="remember">
+              Remember me
+            </label>
           </div>
 
-          <button type="submit" className="btn btn-primary w-100">Submit</button>
+          <button type="submit" className="btn btn-primary w-100">
+            Submit
+          </button>
         </form>
       </div>
     </div>
