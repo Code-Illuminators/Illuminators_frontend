@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function LoginCard() {
+  const navigate = useNavigate();
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -17,6 +21,7 @@ export default function LoginCard() {
       })
       .then((data) => {
         console.log("✅ Logged in:", data);
+        navigate("/main")
       })
       .catch((err) => {
         console.error("❌ Login error:", err);
