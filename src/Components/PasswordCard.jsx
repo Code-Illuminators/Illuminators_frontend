@@ -2,17 +2,33 @@ import { useNavigate } from "react-router-dom";
 
 export default function PasswordCard() {
   const navigate = useNavigate();
-  const DEFAULT_PASSWORD = "1234";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const password = e.target.password.value.trim();
 
-    if (password === DEFAULT_PASSWORD) {
-      navigate("/register");
-    } else {
-      alert("❌ Wrong password");
-    }
+    const form = e.target;
+    const password = form.password.value.trim();
+
+    fetch("http://localhost:8000/api/auth/entry-password/check/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.json();
+      })
+      .then((data) => {
+        if (data.valid === true) {
+          navigate("/register");
+        } else {
+          alert(" Wrong password");
+        }
+      })
+      .catch((err) => {
+        console.error(" Password check error:", err);
+        alert(" Server error, try again later.");
+      });
   };
 
   return (
