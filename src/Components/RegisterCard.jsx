@@ -29,13 +29,17 @@ export default function RegisterCard() {
         return response.json();
       })
       .then((data) => {
-        console.log("✅ Success:", data);
-        navigate("/login");
+        console.log("Success:", data);
+        localStorage.setItem("user", JSON.stringify(data));
+
+        navigate("/main")
       })
       .catch((error) => {
-        console.error("❌ Error:", error);
+        console.error("Error:", error);
       });
+
   };
+  
 
   return (
     <div className="d-flex align-items-center justify-content-center min-vh-100">

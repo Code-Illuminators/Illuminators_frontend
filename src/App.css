@@ -227,3 +227,73 @@ body::before {
   box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.3);
   border-radius: 0.5rem;
 }
+
+#root {
+  height: 100vh;
+}
+
+.leaflet-container {
+  margin-top: 100px;
+  border-radius: 2rem;
+  height: 80vh;
+  width: 200vh;
+}
+
+.compromised-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+  padding: 1.5rem;
+  background-color: red;
+  color: rgb(0, 0, 0);
+
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  border: 2px solid darkred;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.compromised-btn:hover {
+  background-color: darkred;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+  transform: translateX(-50%) scale(1.03);
+}
+
+.compromised-btn:active {
+  background-color: #8b0000;
+  transform: translateX(-50%) scale(0.97);
+}
+
+.btn-outline-gold {
+    --bs-btn-color: #FFD700;
+    --bs-btn-border-color: #FFD700;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #FFD700;
+    --bs-btn-hover-border-color: #FFD700; 
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #FFC700;
+    --bs-btn-active-border-color: #FFC700;
+    text-align: center; 
+}
+
+.vote-btn-width {
+    min-width: 120px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+}

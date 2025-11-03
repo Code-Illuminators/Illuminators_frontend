@@ -20,19 +20,16 @@ export default function LoginCard() {
         return res.json();
       })
       .then((data) => {
-        console.log("✅ Logged in:", data);
+        console.log("Logged in:", data);
+        localStorage.setItem("user", JSON.stringify(data));
         navigate("/main")
       })
-      .catch((err) => {
-        console.error("❌ Login error:", err);
-      });
   };
 
   return (
     <div className="d-flex align-items-center justify-content-center min-vh-100">
       <div className="card shadow p-4" style={{ width: "min(92vw, 360px)" }}>
         <h2 className="text-center mb-3">Login</h2>
-
         <form className="vstack gap-3" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="username" className="form-label">
@@ -46,7 +43,6 @@ export default function LoginCard() {
               required
             />
           </div>
-
           <div>
             <label htmlFor="password" className="form-label">
               Password
@@ -61,7 +57,6 @@ export default function LoginCard() {
               required
             />
           </div>
-
           <div className="form-check">
             <input
               className="form-check-input"
@@ -73,7 +68,6 @@ export default function LoginCard() {
               Remember me
             </label>
           </div>
-
           <button type="submit" className="btn btn-primary w-100">
             Submit
           </button>
