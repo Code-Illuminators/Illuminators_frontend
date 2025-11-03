@@ -4,7 +4,7 @@ import RegisterCard from "./Components/RegisterCard.jsx";
 import LoginCard from "./Components/LoginCard.jsx";
 import Main from "./Components/Main.jsx";
 import ChangePassword from "./Components/ChangePassword.jsx";
-import Vote from "./Components/Vote.jsx"
+import Vote from "./Components/Vote.jsx";
 import Promotion from "./Components/Promotion.jsx";
 import OngoingVotes from "./Components/OngoingVotes.jsx";
 

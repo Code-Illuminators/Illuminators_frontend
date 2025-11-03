@@ -32,14 +32,12 @@ export default function RegisterCard() {
         console.log("Success:", data);
         localStorage.setItem("user", JSON.stringify(data));
 
-        navigate("/main")
+        navigate("/main");
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-
   };
-  
 
   return (
     <div className="d-flex align-items-center justify-content-center min-vh-100">

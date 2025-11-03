@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function LoginCard() {
   const navigate = useNavigate();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -22,8 +22,8 @@ export default function LoginCard() {
       .then((data) => {
         console.log("Logged in:", data);
         localStorage.setItem("user", JSON.stringify(data));
-        navigate("/main")
-      })
+        navigate("/main");
+      });
   };
 
   return (

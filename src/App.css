@@ -276,24 +276,24 @@ body::before {
 }
 
 .btn-outline-gold {
-    --bs-btn-color: #FFD700;
-    --bs-btn-border-color: #FFD700;
-    --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #FFD700;
-    --bs-btn-hover-border-color: #FFD700; 
-    --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #FFC700;
-    --bs-btn-active-border-color: #FFC700;
-    text-align: center; 
+  --bs-btn-color: #ffd700;
+  --bs-btn-border-color: #ffd700;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #ffd700;
+  --bs-btn-hover-border-color: #ffd700;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #ffc700;
+  --bs-btn-active-border-color: #ffc700;
+  text-align: center;
 }
 
 .vote-btn-width {
-    min-width: 120px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  min-width: 120px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .navbar .container-fluid {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
