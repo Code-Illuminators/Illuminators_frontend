@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+
+    environment {
+        DOCKER_IMAGE_TAG = "frontend_image_${env.BUILD_NUMBER}"
+        ECR_LINK   = credentials('ecr_link_credential_frontend')
+        AWS_REGION = credentials('aws_region_credential')
+    }
+
+    stages {
+
+        stage('Checkout repository') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Docker image') {
+            steps {
+                script {
+                    frontend_app = docker.build("illuminators_frontend_ecr")
+                }
+            }
+        }
+
+        stage('Push Docker image') {
+            steps {
+                script {
+                    docker.withRegistry(
+                        "${env.ECR_LINK}",
+                        "ecr:${env.AWS_REGION}:aws_credentials"
+                    ) {
+                        frontend_app.push("${env.DOCKER_IMAGE_TAG}")
+                    }
+                }
+            }
+        }
+
+    }
+}
