@@ -1,16 +1,111 @@
-# React + Vite
+# Illuminators Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend application for the Illuminati project. It is built with React, Vite, and Vitest for testing. The project uses modern tooling, follows component-based structure, and provides a full testing environment with coverage reports.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+React 19
+Vite 7
+React Router DOM 7
+Leaflet / React-Leaflet
+MapLibre GL
+Vitest + Testing Library
+ESLint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Code-Illuminators/Illuminators_frontend.git
+cd illuminators_frontend
+```
+### 2. Install dependencies
+
+```bash
+npm install
+```
+## Running the Application
+
+### Development server
+
+```bash
+npm run dev
+```
+
+Start the Vite dev server and open the app in your browser.
+
+### Build for production
+
+
+
+
+Creates an optimized production build.
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+---
+
+## Testing
+
+This project uses Vitest with Testing Library.
+
+### Run tests with coverage
+
+```bash
+npm run test:coverage
+```
+
+Coverage reports will appear in the `coverage/` directory (text, json, lcov).
+
+---
+
+## ⚙️ Configuration
+
+### Vite configuration (`vite.config.js`)
+
+Configures React plugin and Vite defaults.
+
+### Vitest configuration (`vitest.config.js`)
+
+* Test environment: **jsdom**
+* Coverage provider: **v8**
+* Setup file: `vitest.setup.js`
+
+---
+
+## 📦 Dependencies
+
+Key runtime dependencies:
+
+* `react`, `react-dom`
+* `react-router-dom`
+* `leaflet`, `react-leaflet`
+* `maplibre-gl`
+
+Key dev dependencies:
+
+* `vitest`
+* `@testing-library/react`
+* `eslint`
+* `jsdom`
+
+---
+
+## 📄 License
+
+This project is private and not licensed for public distribution.
+
+---
+
+## 🙌 Contributions
+
+For internal development only. Follow the pull request template and workflow rules.
