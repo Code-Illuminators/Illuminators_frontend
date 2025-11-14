@@ -90,42 +90,43 @@ export default function OngoingVotes() {
   } else {
     content = (
       <div className="row g-4 justify-content-center">
-        {Array.isArray(votes) && votes.map((vote) => (
-          <div key={vote.id} className="col-121 col-sm-61 col-lg-41">
-            <div className="card shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title text-primary">
-                  Vote for {vote.nominated_user_username}
-                </h5>
-                <h6 className="card-subtitle mb-2 text-primary">
-                  Promoting to {vote.promotion_role?.toUpperCase()}
-                </h6>
-                <p className="card-text small">
-                  Status:{" "}
-                  <span className="badge bg-warning text-dark">
-                    {vote.status?.toUpperCase() || "ACTIVE"}
-                  </span>
-                </p>
-                <p className="card-text small">
-                  Votes: {vote.for_amount} YES / {vote.against_amount} NO
-                  (Progress: {vote.progress}%)
-                </p>
-                <button
-                  className="btn btn-sm btn-outline-success me-2"
-                  onClick={() => handleVote(vote.id, "for")}
-                >
-                  YES
-                </button>
-                <button
-                  className="btn btn-sm btn-outline-danger"
-                  onClick={() => handleVote(vote.id, "against")}
-                >
-                  NO
-                </button>
+        {Array.isArray(votes) &&
+          votes.map((vote) => (
+            <div key={vote.id} className="col-121 col-sm-61 col-lg-41">
+              <div className="card shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title text-primary">
+                    Vote for {vote.nominated_user_username}
+                  </h5>
+                  <h6 className="card-subtitle mb-2 text-primary">
+                    Promoting to {vote.promotion_role?.toUpperCase()}
+                  </h6>
+                  <p className="card-text small">
+                    Status:{" "}
+                    <span className="badge bg-warning text-dark">
+                      {vote.status?.toUpperCase() || "ACTIVE"}
+                    </span>
+                  </p>
+                  <p className="card-text small">
+                    Votes: {vote.for_amount} YES / {vote.against_amount} NO
+                    (Progress: {vote.progress}%)
+                  </p>
+                  <button
+                    className="btn btn-sm btn-outline-success me-2"
+                    onClick={() => handleVote(vote.id, "for")}
+                  >
+                    YES
+                  </button>
+                  <button
+                    className="btn btn-sm btn-outline-danger"
+                    onClick={() => handleVote(vote.id, "against")}
+                  >
+                    NO
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     );
   }
