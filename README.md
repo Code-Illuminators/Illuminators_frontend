@@ -16,7 +16,7 @@ ESLint
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### 1. Clone the repository
 
@@ -67,45 +67,3 @@ npm run test:coverage
 Coverage reports will appear in the `coverage/` directory (text, json, lcov).
 
 ---
-
-## ⚙️ Configuration
-
-### Vite configuration (`vite.config.js`)
-
-Configures React plugin and Vite defaults.
-
-### Vitest configuration (`vitest.config.js`)
-
-* Test environment: **jsdom**
-* Coverage provider: **v8**
-* Setup file: `vitest.setup.js`
-
----
-
-## 📦 Dependencies
-
-Key runtime dependencies:
-
-* `react`, `react-dom`
-* `react-router-dom`
-* `leaflet`, `react-leaflet`
-* `maplibre-gl`
-
-Key dev dependencies:
-
-* `vitest`
-* `@testing-library/react`
-* `eslint`
-* `jsdom`
-
----
-
-## 📄 License
-
-This project is private and not licensed for public distribution.
-
----
-
-## 🙌 Contributions
-
-For internal development only. Follow the pull request template and workflow rules.
