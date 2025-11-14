@@ -24,11 +24,13 @@ ESLint
 git clone https://github.com/Code-Illuminators/Illuminators_frontend.git
 cd illuminators_frontend
 ```
+
 ### 2. Install dependencies
 
 ```bash
 npm install
 ```
+
 ## Running the Application
 
 ### Development server
@@ -40,9 +42,6 @@ npm run dev
 Start the Vite dev server and open the app in your browser.
 
 ### Build for production
-
-
-
 
 Creates an optimized production build.
 
