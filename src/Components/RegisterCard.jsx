@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "./Main.jsx";
 
 export default function RegisterCard() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export default function RegisterCard() {
     const email = form.email.value;
     const password = form.password.value;
 
-    fetch("http://localhost:8000/api/auth/register/", {
+    fetch(`${API_BASE_URL}/api/auth/register/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +33,7 @@ export default function RegisterCard() {
         console.log("Success:", data);
         localStorage.setItem("user", JSON.stringify(data));
 
-        navigate("/main");
+        navigate("/login");
       })
       .catch((error) => {
         console.error("Error:", error);

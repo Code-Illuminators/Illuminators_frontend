@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "./Main.jsx";
 
 export default function OngoingVotes() {
   const [votes, setVotes] = useState([]);
@@ -15,7 +16,7 @@ export default function OngoingVotes() {
       return;
     }
 
-    fetch("http://localhost:8000/api/moderation/votes/active/", {
+    fetch(`${API_BASE_URL}/api/moderation/votes/active/`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -46,7 +47,7 @@ export default function OngoingVotes() {
       return;
     }
 
-    fetch(`http://localhost:8000/api/moderation/votes/${voteId}/vote/`, {
+    fetch(`${API_BASE_URL}/api/moderation/votes/${voteId}/vote/`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,

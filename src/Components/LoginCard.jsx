@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "./Main.jsx";
 
 export default function LoginCard() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function LoginCard() {
     const username = form.username.value;
     const password = form.password.value;
 
-    fetch("http://localhost:8000/api/auth/login/", {
+    fetch(`${API_BASE_URL}/api/auth/login/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),

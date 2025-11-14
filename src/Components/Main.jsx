@@ -14,6 +14,8 @@ import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 import { useNavigate } from "react-router-dom";
 
+const API_BASE_URL = "http://localhost:8000";
+
 export default function Main({ initialMarkers = [] }) {
   const [selectedCreature, setSelectedCreature] = useState("");
   const [customCreature, setCustomCreature] = useState("");
@@ -45,7 +47,7 @@ export default function Main({ initialMarkers = [] }) {
 
     const creatureTypes = ["bigfoot", "ufo", "ghosts", "others"];
     const fetchPromises = creatureTypes.map((type) =>
-      fetch(`http://localhost:8000/api/posts/${type}/`, {
+      fetch(`${API_BASE_URL}/api/posts/${type}/`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -110,15 +112,12 @@ export default function Main({ initialMarkers = [] }) {
       return;
     }
 
-    fetch(
-      `http://localhost:8000/api/posts/${creatureType}/${backendId}/delete/`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+    fetch(`${API_BASE_URL}/api/posts/${creatureType}/${backendId}/delete/`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
       },
-    )
+    })
       .then((res) => {
         if (res.status === 401) {
           localStorage.removeItem("user");
@@ -168,16 +167,6 @@ export default function Main({ initialMarkers = [] }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (isSimpleUser) {
-      alert("Unable to submit");
-      return;
-    }
-
-    if (!tempMarker || !locationMark || !markerPhoto) {
-      alert("Please place a marker, provide a location, and a photo!");
-      return;
-    }
-
     const creatureTypeRoute =
       selectedCreature === "other" ? "others" : selectedCreature;
     const popUpText = locationMark;
@@ -191,13 +180,7 @@ export default function Main({ initialMarkers = [] }) {
       formData.append("creature_name", customCreature);
     }
 
-    if (!accessToken) {
-      alert("Authorization failed. Please log in.");
-      navigate("/login");
-      return;
-    }
-
-    fetch(`http://localhost:8000/api/posts/${creatureTypeRoute}/create/`, {
+    fetch(`${API_BASE_URL}/api/posts/${creatureTypeRoute}/create/`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -248,7 +231,7 @@ export default function Main({ initialMarkers = [] }) {
     }
 
     if (window.confirm("Are you sure about it ?")) {
-      fetch("http://localhost:8000/api/moderation/delete-all/", {
+      fetch(`${API_BASE_URL}/api/moderation/delete-all/`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -279,7 +262,7 @@ export default function Main({ initialMarkers = [] }) {
       return;
     }
 
-    fetch("http://localhost:8000/api/auth/logout/", {
+    fetch(`${API_BASE_URL}/api/auth/logout/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ refresh: user.refresh }),
@@ -539,7 +522,7 @@ export default function Main({ initialMarkers = [] }) {
                                  {" "}
                 {marker.image_url && (
                   <img
-                    src={`http://localhost:8000${marker.image_url}`}
+                    src={`${API_BASE_URL}${marker.image_url}`}
                     alt="Creature sighting"
                     style={{
                       maxWidth: "100px",

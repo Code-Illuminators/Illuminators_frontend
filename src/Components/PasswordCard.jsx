@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "./Main.jsx";
 
 export default function PasswordCard() {
   const navigate = useNavigate();
@@ -7,7 +8,7 @@ export default function PasswordCard() {
     e.preventDefault();
     const password = e.target.password.value.trim();
 
-    fetch("http://localhost:8000/api/auth/entry-password/check/", {
+    fetch(`${API_BASE_URL}/api/auth/entry-password/check/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password: password }),
@@ -23,7 +24,7 @@ export default function PasswordCard() {
       .then((data) => {
         if (data.valid === true) {
           alert(data.message);
-          navigate("/login");
+          navigate("/register");
         }
       });
   };

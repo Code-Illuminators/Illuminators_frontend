@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "./Main.jsx";
 
 export default function Promotion() {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -31,7 +32,7 @@ export default function Promotion() {
       roles_allowed_vote: [targetRole],
     };
 
-    fetch("http://localhost:8000/api/moderation/votes/create/", {
+    fetch(`${API_BASE_URL}/api/moderation/votes/create/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +54,7 @@ export default function Promotion() {
       .then((data) => {
         const message =
           data.message || `Vote created successfully! ID: ${data.id}`;
-        alert(`✅ ${message}`);
+        alert(`${message}`);
       });
   };
 

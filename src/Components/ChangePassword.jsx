@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "./Main.jsx";
 
 export default function ChangePassword() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function ChangePassword() {
       return;
     }
 
-    fetch("http://localhost:8000/api/auth/change-password/", {
+    fetch(`${API_BASE_URL}/api/auth/change-password/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
