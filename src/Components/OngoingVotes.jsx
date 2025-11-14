@@ -90,7 +90,7 @@ export default function OngoingVotes() {
   } else {
     content = (
       <div className="row g-4 justify-content-center">
-        {votes.map((vote) => (
+        {Array.isArray(votes) && votes.map((vote) => (
           <div key={vote.id} className="col-121 col-sm-61 col-lg-41">
             <div className="card shadow-sm">
               <div className="card-body">
