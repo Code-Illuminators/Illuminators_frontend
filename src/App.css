@@ -1,0 +1,299 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+:root {
+  --bs-primary: #a89b69;
+  --bs-primary-rgb: 168, 155, 105;
+  --bs-body-color: #d9d7cf;
+  --bs-border-color: #2b2f36;
+  --bs-card-bg: #14171f;
+  --bs-card-color: var(--bs-body-color);
+  --bs-card-border-color: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background: radial-gradient(
+    circle at 20% 30%,
+    #0b0d11 0%,
+    #161b22 50%,
+    #0b0d11 100%
+  );
+  background-attachment: fixed;
+  color: var(--bs-body-color);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(180, 180, 255, 0.05),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 30% 80%,
+      rgba(100, 150, 180, 0.07),
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card {
+  background: rgba(24, 28, 38, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+  position: relative;
+  z-index: 1;
+}
+
+.form-control,
+.card input {
+  background-color: #121826;
+  color: #f0efea;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-control::placeholder,
+.card input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.form-control:focus,
+.card input:focus {
+  color: #fff;
+  background-color: #1a2130;
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.btn.btn-primary,
+.card button.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #1b1b1b;
+  transition: all 0.2s ease;
+}
+
+.btn.btn-primary:hover,
+.card button.btn-primary:hover {
+  background-color: #b3a56b;
+  box-shadow: 0 0 20px rgba(var(--bs-primary-rgb), 0.4);
+  transform: translateY(-1px);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+  background-color: #0f1421;
+  border: 1px solid #2b3550;
+}
+
+.form-check-input:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.form-check-label {
+  font-size: 0.95rem;
+  color: var(--bs-body-color);
+}
+
+.alert-danger {
+  background-color: #2a1717;
+  border-color: #5a2b2b;
+  color: #f1c0c0;
+}
+
+.dropdown {
+  width: 200px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--bs-border-color);
+  background: #0f1421;
+  color: var(--bs-body-color);
+  cursor: pointer;
+}
+.dropdown:focus {
+  outline: none;
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.result {
+  font-size: 32px;
+  margin-top: 10px;
+  color: var(--bs-primary);
+}
+.rounded-10 {
+  border-radius: 10px;
+}
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+#offcanvasNavbar {
+  background-color: var(--bs-card-bg);
+  color: var(--bs-body-color);
+}
+#offcanvasNavbar .offcanvas-title {
+  color: var(--bs-body-color);
+  font-weight: 700;
+}
+#offcanvasNavbar .btn-close {
+  filter: invert(1) grayscale(1);
+}
+#offcanvasNavbar .btn-close:hover {
+  opacity: 1;
+}
+
+#offcanvasNavbar .navbar-nav {
+  gap: 0.5rem;
+}
+
+#offcanvasNavbar .nav-link {
+  color: var(--bs-body-color);
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.6rem;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    padding-left 0.18s ease,
+    box-shadow 0.18s ease;
+}
+#offcanvasNavbar .nav-link:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.12);
+  color: #fff;
+}
+#offcanvasNavbar .nav-link.active {
+  background-color: rgba(var(--bs-primary-rgb), 0.18) !important;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(var(--bs-primary-rgb), 0.35);
+}
+#offcanvasNavbar .nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.navbar-toggler {
+  color: var(--bs-body-color);
+  border-color: var(--bs-border-color);
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+.navbar-toggler:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.15);
+  border-color: var(--bs-primary);
+}
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.navbar-toggler:focus-visible {
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.3);
+  border-radius: 0.5rem;
+}
+
+#root {
+  height: 100vh;
+}
+
+.leaflet-container {
+  margin-top: 100px;
+  border-radius: 2rem;
+  height: 80vh;
+  width: 200vh;
+}
+
+.compromised-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+  padding: 1.5rem;
+  background-color: red;
+  color: rgb(0, 0, 0);
+
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  border: 2px solid darkred;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.compromised-btn:hover {
+  background-color: darkred;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+  transform: translateX(-50%) scale(1.03);
+}
+
+.compromised-btn:active {
+  background-color: #8b0000;
+  transform: translateX(-50%) scale(0.97);
+}
+
+.btn-outline-gold {
+  --bs-btn-color: #ffd700;
+  --bs-btn-border-color: #ffd700;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #ffd700;
+  --bs-btn-hover-border-color: #ffd700;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #ffc700;
+  --bs-btn-active-border-color: #ffc700;
+  text-align: center;
+}
+
+.vote-btn-width {
+  min-width: 120px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+}
